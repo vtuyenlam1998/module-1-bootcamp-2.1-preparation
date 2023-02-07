@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VarVsLet</title>
+</head>
+<body>
+<script>
+function testVarVsLet() {
+var numberA = 2; //function scope
+
+if (3 > 2) {
+// var numberB = 3; //block scope
+let numberB = 3; //block scope
+}
+var numberA= 3;
+console.log("numberA: " + numberA); //2
+console.log("numberB: " + numberB); //undefined
+}
+testVarVsLet()
+</script>
+</body>
+</html>

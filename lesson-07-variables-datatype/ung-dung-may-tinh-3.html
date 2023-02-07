@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập: Ứng dụng máy tính</title>
+</head>
+<body>
+<h1>Ứng dụng máy tính</h1>
+<input id="a" type="text" placeholder="Nhập số a">
+<input id="b" type="text" placeholder="Nhập số b">
+<br>
+<button onclick="tinhToan('+')" type="button">Cộng</button>
+<button onclick="tinhToan('-')" type="button">Trừ</button>
+<button onclick="tinhToan('*')" type="button">Nhân</button>
+<button onclick="tinhToan('/')" type="button">Chia</button>
+<br>
+<p>Kết quả : </p><span></span>
+
+<script>
+  function tinhToan (opera) {
+    let a = Number(document.querySelector("#a").value);
+    let b = Number(document.querySelector("#b").value);
+    let result = eval(a + opera + b);
+    document.querySelector("span").innerText = result;
+  }
+</script>
+</body>
+</html>
