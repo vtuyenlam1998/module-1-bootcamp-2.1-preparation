@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập vòng lặp</title>
+</head>
+<body>
+  <h2>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h2>
+  <script>
+    let numbers=Number(prompt("Nhập số: "));
+    let isDivided7=0;
+    let sum=0
+    const max_int_number=Number.MAX_SAFE_INTEGER;
+        for (let i=0;isDivided7<numbers;i++) {
+          if (i % 7 == 0) {
+            isDivided7++;
+            sum =sum + i;
+            document.write(sum + "<br>")
+          }
+        }
+  </script>
+</body>
+</html>

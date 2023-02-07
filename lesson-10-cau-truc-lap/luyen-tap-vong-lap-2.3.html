@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập vòng lặp</title>
+</head>
+<body>
+  <h2>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h2>
+  <script>
+    let num=Number(prompt("Nhập số lượng: "));
+    for (i=0;i<num;i++) {
+      for(f=0;f<=i;f++) {
+          document.write("*"+'');
+      } document.write("<br>");
+    }
+
+    let count=num;
+    for (let a=0;a<num;a++) {
+        for (let b=0;b<count;b++) {
+            document.write("*"+'');
+        } document.write("<br>");
+        count--;
+    }
+    for (i=0;i<num;i++) {
+        for(f=0;f<=i;f++) {
+            document.write(`<span style=float:right>*</span>`);
+        } document.write("<br>");
+    }
+
+    let count2=num;
+    for (let a=0;a<num;a++) {
+        for (let b=0;b<count2;b++) {
+            document.write(`<span style=float:right>*</span>`);
+        } document.write("<br>");
+        count2--;
+    }
+  </script>
+</body>
+</html>

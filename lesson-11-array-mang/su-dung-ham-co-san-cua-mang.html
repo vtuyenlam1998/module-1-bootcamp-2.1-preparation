@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sử dụng hàm có sẵn của mảng</title>
+</head>
+<body>
+  <script>
+    let myColor=["Red","Green","White","Black"];
+    console.log(myColor);
+    console.log(myColor.join());
+    console.log(myColor.toString());
+    console.log(myColor.join('_'));
+
+    var num = window.prompt();
+    var str = num.toString();
+    console.log(typeof num.toString());
+    var result = [str[0]];
+
+    for (var x = 1; x < str.length; x++) {
+      if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+        result.push('-', str[x]);
+      } else {
+        result.push(str[x]);
+      }
+    }
+    console.log(result.join(''));
+  </script>
+</body>
+</html>

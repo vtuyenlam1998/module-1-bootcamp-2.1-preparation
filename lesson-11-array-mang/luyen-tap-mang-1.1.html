@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập mảng 1.1</title>
+</head>
+<body>
+<h2>Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</h2>
+<p>Mảng phân tử ban đầu là <span id="print1a" style="color: #d61b06"></span></p> <hr>
+<p>Có <span id="print1b" style="color: aqua"></span> phần tử lớn hơn hoặc bằng 10:</p>
+<p id="print1c"></p>
+
+<h2>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h2>
+<p>Mảng phân tử ban đầu là <span id="print2a" style="color: #d61b06"></span></p> <hr>
+<p>Giá trị lớn nhất của dãy số trên và vị trí của nó là</p>
+<p id="print2b" style="color: darkmagenta"></p>
+<p id="print2c" style="color: darkorange"></p>
+
+<h2>Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.</h2>
+<p>Mảng phân tử ban đầu là <span id="print3a" style="color: #d61b06"></span></p> <hr>
+<p>Giá trị lớn nhất của dãy số trên và giá trị trung bình của nó là</p>
+<p id="print3b" style="color: darkmagenta"></p>
+<p id="print3c" style="color: darkorange"></p>
+<script>
+    let numbers=[10,6,9,58,41,-31,0,20,13];
+    let count=0; print='';
+    for (let i in numbers) {
+        if (numbers[i]>=10) {
+            print += `Element ${i} là ${numbers[i]} <br>` ;
+            count++
+        }
+    }
+    document.querySelector('#print1a').innerHTML=`[${numbers}]`;
+    document.querySelector('#print1b').innerHTML=count;
+    document.querySelector('#print1c').innerHTML=print;
+
+    let numbers2=[99,5,41,-44,12,0,3,9,11,-22];
+    let max=numbers2[0];index=0;
+    for (let i in numbers2) {
+        if(max<numbers2[i]) {
+            max= numbers2[i];
+            index=i;
+        }
+    } document.querySelector('#print2a').innerHTML=`[${numbers2}]`;
+      document.querySelector('#print2b').innerHTML=`Giá trị lớn nhất là ${max}`;
+      document.querySelector('#print2c').innerHTML=`Vị trí ở ${index}`;
+
+    let numbers3=[1,5,52,66,-9,30,0,95,42,-2];
+    let max3=numbers3[0];avarage=0;
+    for (let i in numbers3) {
+        if (max3 < numbers3[i]) {
+            max3= numbers3[i];
+        } avarage += numbers3[i];
+    } avarage2 = avarage/ numbers3.length;
+    document.querySelector('#print3a').innerHTML=`[${numbers3}]`;
+    document.querySelector('#print3b').innerHTML=`Giá trị lớn nhất là ${max3}`;
+    document.querySelector('#print3c').innerHTML=`Giá trị trung bình là ${avarage2}`;
+</script>
+</body>
+</html>

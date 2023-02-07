@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cấu trúc điều kiện 01</title>
+</head>
+<body>
+<h2>Bài 1:A có chia hết B?</h2>
+Nhập số A:
+<input type="text" id="a" value=""><br>
+Nhập số B:
+<input type="text" id="b" value=""><br>
+<button type="button" onclick="isDiv()">Kiểm tra</button>
+
+<h2>Bài 2:Kiểm tra đủ tuổi học lớp 10 chưa?</h2>
+<label for="age">Nhập số tuổi</label>
+<input type="number" min="1" name="age" id="age" value="">
+<button type="button" onclick="enoughAge()">Kiểm tra</button>
+
+<h2>Bài 3:Nhập số nguyên xem nó lớn hay bé hơn 0</h2>
+<label for="Int">Nhập số nguyên</label>
+<input type="text" id="Int" placeholder="1,0,-3" name="Int">
+<button type="button" onclick="numberInt()">Kiểm tra</button>
+
+<h2>Bài 4:Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h2>
+<label for="Int1">Nhập số nguyên thứ 1</label>
+<input type="text" id="Int1" placeholder="1,0,-3" name="Int"><br>
+<label for="Int2">Nhập số nguyên thứ 2</label>
+<input type="text" id="Int2" placeholder="1,0,-3" name="Int"><br>
+<label for="Int3">Nhập số nguyên thứ 3</label>
+<input type="text" id="Int3" placeholder="1,0,-3" name="Int"><br>
+<button type="button" onclick="numberGreatest()">Kiểm tra</button>
+
+<h2>Bài 5:Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h2>
+<label for="Point1">Nhập điểm các kiểm tra</label>
+<input type="text" id="Point1" value="" name="Point"><br>
+<label for="Point2">Nhập điểm thi giữa kì</label>
+<input type="text" id="Point2" value="" name="Point"><br>
+<label for="Point3">Nhập điểm thi cuối kì</label>
+<input type="text" id="Point3" value="" name="Point"><br>
+<button type="button" onclick="pointAverage()">Kiểm tra</button>
+
+<h2>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h2>
+<label for="Money">Nhập mức doanh số bán hàng của bạn (triệu)</label>
+<input type="text" id="Money" placeholder="100" name="Money">
+<button type="button" onclick="interestMoney()">Tính toán</button>
+<div id="1"></div>
+
+<h2>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h2>
+<label for="Phone">Nhập cước điện thoại của bạn (phút)</label>
+<input type="text" id="Phone" placeholder="100" name="Phone">
+<button type="button" onclick="cuocThueBao()">Tính toán</button>
+<div id="2"></div>
+
+<script>
+
+  function cuocThueBao() {
+      let phone= parseInt(document.getElementById("Phone").value);
+      if (phone>200) {
+          price= 25000+600*50+400*150+(phone-200)*200;
+          document.getElementById(2).innerHTML=`Cước phí thuê báo điện thoại cần thanh toán là ${price} đồng`
+      } else if (phone>50) {
+          price= 25000+600*50+(phone-50)*400;
+          document.getElementById(2).innerHTML=`Cước phí thuê báo điện thoại cần thanh toán là ${price} đồng`
+      } else {
+          price = 25000 + 600 * phone;
+          document.getElementById(2).innerHTML = `Cước phí thuê báo điện thoại cần thanh toán là ${price} đồng`
+      }
+  }
+
+  function interestMoney() {
+      let money= parseInt(document.getElementById("Money").value);
+      if (money>300) {
+          interest = 20* money / 100;
+          document.getElementById(1).innerHTML=`Số tiền hoa hồng là ${interest} triệu`
+      } else if (money>100) {
+          interest = 10 * money /100;
+          document.getElementById(1).innerHTML=`Số tiền hoa hồng là ${interest} triệu`
+      } else {
+          interest = 5 * money / 100;
+          document.getElementById(1).innerHTML=`Số tiền hoa hồng là ${interest} triệu`
+      }
+  }
+  function pointAverage() {
+    let point1 = parseInt(document.getElementById("Point1").value);
+    let point2 = parseInt(document.getElementById("Point2").value);
+    let point3 = parseInt(document.getElementById("Point3").value);
+    let average = (point1 + point2 + point3) / 3;
+    if (average >= 9) {
+      alert("hạng A");
+    } else if (average >=7) {
+      alert("hạng B");
+    } else if (average >=5) {
+      alert("hạng C");
+    } else {
+      alert("hạng D");
+    }
+  }
+  function isDiv(){
+  let numA=parseFloat(document.getElementById("a").value);
+  let numB=parseFloat(document.getElementById("b").value);
+  numA%numB==0? alert("A chia hết cho B"):alert("A không chia hết cho B");}
+  function enoughAge(){
+  let age=parseInt(document.getElementById("age").value);
+  age <= 16 ? alert("Học sinh không đủ điều kiện vào học lớp 10"):alert("Học sinh đủ điều kiện vào học lớp 10");
+}
+  function numberInt() {
+    let numI=parseInt(document.getElementById("Int").value);
+    numI > 0? alert("Số lớn hơn 0"):numI == 0?alert("Số bằng 0"):alert("Số bé hơn 0");
+  }
+  function numberGreatest() {
+    let num1=parseInt(document.getElementById("Int1").value);
+    let num2=parseInt(document.getElementById("Int2").value);
+    let num3=parseInt(document.getElementById("Int3").value);
+    (num1 > num2) && (num1 > num3)? alert(`${num1} là số lớn nhất`):(num2>num3)&&(num2>num1)?alert(`${num2} là số lớn nhất`):
+            (num3>num1)&&(num3>num2)?alert(`${num3} là số lớn nhất`):alert("3 số bằng nhau");
+      }
+</script>
+</body>
+</html>

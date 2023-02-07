@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính số ngày</title>
+</head>
+<body>
+  <h1>Công cụ tính số ngày trong tháng</h1>
+    <form>
+        <label for="month">Số tháng:</label>
+        <input type="number" placeholder="nhập tháng" id="month" min="1" max="12" required
+               style="width: 100px">
+        <button onclick="changeDay()" type="button" >Thay đổi</button>
+        <p>Đây là chỗ hiển thị kết quả</p>
+    </form>
+    <script>
+        function changeDay() {
+            let month=parseInt(document.getElementById("month").value);
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.querySelector("p").innerHTML=`Tháng ${month} có 31 ngày`;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.querySelector("p").innerHTML=`Tháng ${month} có 30 ngày `;
+                    break;
+                default:
+                    document.querySelector("p").innerHTML=`Tháng ${month} có 28 hoặc 29 ngày `;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

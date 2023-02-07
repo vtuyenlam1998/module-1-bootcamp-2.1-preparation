@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For...of with objects</title>
+</head>
+<body>
+  <script>
+    const namesArr = ['Tý', 'Tèo', 'Tồ'];
+
+    for (const name of namesArr) {
+      console.log(name);
+    }
+
+    const students = [
+      { id: 1, name: "Tý", age: 18 },
+      { id: 2, name: "Tèo", age: 19 },
+      { id: 3, name: "Tồ", age: 20 }
+    ];
+
+    for (const student of students) {
+      console.log(student);
+      console.log(student.id);
+      console.log(student.name);
+      console.log(student.age);
+    }
+  </script>
+</body>
+</html>

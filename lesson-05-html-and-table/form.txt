@@ -1,0 +1,3 @@
+input placeholder="mời bạn nhập tên" (nếu dùng placeholder thì bỏ thẻ label,placeholder là dòng chữ mờ để gợi ý người dùng nhập loại dữ liệu nào)
+Crt + D để copy lệnh
+Select và options, giá trị value phải ứng với giá trị name vd value=male name=nam,female nữ, và submit sẽ lấy thông tin của giá trị value

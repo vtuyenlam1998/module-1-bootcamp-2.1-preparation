@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+</head>
+<body>
+    <form>
+     <h2>Market Research Survey</h2>
+        <h5>Please take a few moments to complete this satisfaction survey</h5>
+        What is your age range?<br>
+        <select name="age" style="width:400px">
+            <option value="age">18-24</option>
+            <option value="age">24-34</option>
+            <option value="age">35-50</option>
+            <option value="age">50+</option>
+        </select><br><br>
+        What is your yearly income range?<br>
+        <select name="income" style="width:400px">
+            <option value="income">$0-$25,000</option>
+            <option value="income">$25,001-$50,000</option>
+            <option value="income">$50,001-$100,000</option>
+            <option value="income">$100,000+</option>
+        </select><br><br>
+        Gender <br>
+        <input type="radio" name="gender" value="male" checked>Male<br>
+        <input type="radio" name="gender" value="female">Female<br><br>
+        Which of the following products have your purchased in the last 2 months.Please check all that apply.<br>
+        <input type="checkbox" name="products" value="product1"> Product 1<br>
+        <input type="checkbox" name="products" value="product2"> Product 2<br>
+        <input type="checkbox" name="products" value="product3"> Product 3<br><br>
+        How often would you use our new product?<br>
+        <input type="radio" name="frequent" value="daily" checked> Daily<br>
+        <input type="radio" name="frequent" value="weekly"> Weekly<br>
+        <input type="radio" name="frequent" value="monthly"> Monthly<br><br>
+        What would you pay for the new product?<br>
+        $<input type="text" name="currency" placeholder="Dollars" style="width:75px"> . <input type="text" name="currency"
+        placeholder="cents" style="width:25px"><br>
+        <table>
+            <tr><td style="padding-left: 5px">Dollars</td>
+            <td style="padding-left: 48px">Cents</td></tr>
+        </table>
+
+    </form>
+</body>
+</html>

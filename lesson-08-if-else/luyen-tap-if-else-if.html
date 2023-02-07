@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập if else if</title>
+</head>
+<body>
+  <script>
+    let userName=prompt("Mời nhập tên đăng nhập:",'');
+    if (userName=="Admin") {
+      let passWord=prompt("Mời nhập tiếp mật khẩu:",'');
+        if (passWord=="TheMaster") {
+          alert("Welcome back!");
+        } else if (passWord==null) {
+          alert("Cancel!");
+        } else {
+          alert("Wrong Password!");
+        }
+    } else if (userName==null) {
+      alert("Cancel!");
+    } else {
+      alert("I dont know you bitch!");
+    }
+  </script>
+</body>
+</html>

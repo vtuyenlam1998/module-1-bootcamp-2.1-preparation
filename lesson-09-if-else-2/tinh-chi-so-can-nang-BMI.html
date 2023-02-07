@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính chỉ số cân nặng BMI</title>
+</head>
+<body>
+  <h1>Công cụ tính chỉ số BMI</h1>
+  <form>
+    Nhập chỉ số cân nặng của bạn (kg):
+    <input id="weight" type="text" placeholder="vd:58"><br><br>
+    Nhập chỉ số chiều cao của bạn (m):
+    <input id="height" type="text" placeholder="vd:1.58"><br><br>
+    <input id="result" type="button" onclick="BMI()" value="Kiểm tra">
+    <p></p>
+  </form>
+  <script>
+    function BMI() {
+    let a=Number(document.getElementById("weight").value);
+    let b=Number(document.getElementById("height").value);
+    let bmi=a/(b*2);
+    if (bmi < 18) {
+      document.querySelector("p").innerHTML = `Chỉ số BMI là: ${bmi} .Bạn tuyệt vời
+<img src="https://i.pinimg.com/originals/3b/97/63/3b97635b6bd4a5bfc436fbd3908f05e0.gif">`;
+    } else if (bmi < 25.0) {
+      document.querySelector("p").innerHTML = `Chỉ số BMI là: ${bmi} .Bạn tuyệt vời`;
+    } else if (bmi < 30.0) {
+      document.querySelector("p").innerHTML = `Chỉ số BMI là: ${bmi} .Bạn tuyệt vời`;
+    } else {
+      document.querySelector("p").innerHTML = `Chỉ số BMI là: ${bmi} .Bạn tuyệt vời
+<img style='width:100px' src='https://i.pinimg.com/originals/73/4d/11/734d11cc677595ce3c3e5e3bba02721f.gif'>`;
+    }
+    }
+  </script>
+</body>
+</html>

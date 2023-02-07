@@ -1,0 +1,1 @@
+trong thao tác thực hiện tìm kiếm của google.com.vn/search phải để method ở chế độ get,k dc để post vì bảo mật thông tin,k chia sẻ cho google mà google không thể thực hiện được chức năng của nó

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+  <label for="string">Nhập từ:</label>
+  <select id="string">
+    <option>dog</option>
+    <option>dragon</option>
+    <option>pussycat</option>
+    <option>horse</option>
+    <option>bird</option>
+    <option>butterfly</option>
+    <option>chicken</option>
+    <option>fish</option>
+    <option>tiger</option>
+  </select>
+  <button type="button" onclick="tranScript()">Dịch tiếng việt</button>
+  <p id="result"></p>
+  <script>
+    function tranScript() {
+      let arr_eng = ["dog", "dragon", 'pussycat', 'horse', 'bird', 'butterfly', 'chicken', 'fish', 'tiger'];
+      let arr_viet = ['con chóoo', 'con rồng lộn', 'con mèo con', 'con ngựa', 'con trym', 'con bim bím', 'con gà', 'con cá chà bặt', 'bắt cọp'];
+      let string = document.getElementById('string').value;
+      let index_eng = 0;
+      let result = '';
+      for (let i = 0; i < arr_eng.length; i++) {
+        if (string == arr_eng[i]) {
+          index_eng = i;
+          for (let j = 0; j < arr_viet.length; j++) {
+            if (index_eng == j) {
+              result = arr_viet[j];
+            }
+          }
+        }
+      }
+      document.querySelector('p').innerHTML = `Bánh mì chuyển ngữ: ${result} `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập mảng 1</title>
+</head>
+<body>
+  <h2>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</h2>
+    <input type="text" id="txtValue"/>
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+    <div id="result"></div>
+    <p id="reverse"></p>
+  <script>
+    let x=0;
+    let array=Array();
+    function add_element_to_array() {
+      array[x] = document.getElementById("txtValue").value;
+      alert("Element: "+array[x]+" Added at index "+ x);
+      x++;
+      document.getElementById("txtValue ").value='';
+    }
+    function display_array() {
+      document.querySelector('#result').innerHTML= `Mảng số đã nhập là [${array}]`;
+      array.reverse().join();
+      document.querySelector('#reverse').innerHTML= `Mảng số đảo ngược là [${array}]`;
+    }
+  </script>
+</body>
+</html>
