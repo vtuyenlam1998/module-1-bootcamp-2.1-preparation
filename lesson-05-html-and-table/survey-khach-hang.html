@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td {
+            width: 100%;
+            background-color: deeppink;
+        }
+
+    </style>
 </head>
 <body>
     <form>
@@ -36,11 +47,40 @@
         What would you pay for the new product?<br>
         $<input type="text" name="currency" placeholder="Dollars" style="width:75px"> . <input type="text" name="currency"
         placeholder="cents" style="width:25px"><br>
+<!--        <table>-->
+<!--            <tr><td style="padding-left: 5px">Dollars</td>-->
+<!--            <td style="padding-left: 48px">Cents</td></tr>-->
+<!--        </table>-->
+    <br>What features would you like to see in the new product.
+        <textarea id="textArea" name="text" rows="10" cols="100" ></textarea><br><br>
+    Please rate your level of agreement with the following statements.<br>
         <table>
-            <tr><td style="padding-left: 5px">Dollars</td>
-            <td style="padding-left: 48px">Cents</td></tr>
-        </table>
-
+            <tr>
+                <th></th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Agree</th>
+            </tr>
+            <tr style="text-align: center">
+                <td style="text-align: left"><strong>Our products are priced fairly</strong></td>
+                <td><input type="radio" name="price" value="1"><br>1</td>
+                <td><input type="radio" name="price" value="2"><br>2</td>
+                <td><input type="radio" name="price" value="3"><br>3</td>
+            </tr>
+            <tr style="text-align: center">
+                <td style="text-align: left"><strong>Our products are high quality</strong></td>
+                <td><input type="radio" name="quality" value="1"><br>1</td>
+                <td><input type="radio" name="quality" value="2"><br>2</td>
+                <td><input type="radio" name="quality" value="3"><br>3</td>
+            </tr>
+            <tr style="text-align: center">
+                <td style="text-align: left"><strong>You would recommend our product to a friend or coworker</strong></td>
+                <td><input type="radio" name="recommend" value="1"><br>1</td>
+                <td><input type="radio" name="recommend" value="2"><br>2</td>
+                <td><input type="radio" name="recommend" value="3"><br>3</td>
+            </tr>
+        </table><br>
+        <input type="submit" value="Submit" style="width: 100px">
     </form>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+    <script>
+        let Temperature=function (celcius) {
+            this.celcius=celcius;
+            this.changeFahrenheit=function () {
+                return this.celcius*9/5+32;
+            };
+            this.changeKenvin=function () {
+                return this.celcius+273.15;
+            };
+        }
+        let temperature=new Temperature(25);
+        temperature.changeFahrenheit();
+        temperature.changeKenvin();
+        document.write("Nhiệt độ F là "+temperature.changeFahrenheit()+" <sup>o</sup>F</br>");
+        document.write("Nhiệt độ K là "+temperature.changeKenvin()+" <sup>o</sup>K");
+    </script>
+</body>
+</html>

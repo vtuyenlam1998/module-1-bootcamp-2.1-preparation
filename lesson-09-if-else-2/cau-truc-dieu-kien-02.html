@@ -6,13 +6,85 @@
 </head>
 <body>
   <h2>Bài 1: Chuyển từ độ C sang độ F.</h2>
-  <label for="temp">Mời nhập độ C hoặc ngược lại</label>
+  <label for="temp">Mời nhập nhiệt độ: </label>
   <input type="text" name="temp" id="temp" placeholder="20">
-  <button type="button" onclick="convert()">Chuyển đổi</button>
+  <select id="unit1">
+      <option>℃</option>
+      <option>°F</option>
+  </select>
+  <button type="button" onclick="convert1()">Chuyển đổi</button>
+  <p id="result1"></p>
+<!--  Kết thúc bài 1-->
 
+  <h2>Bài 2: Chuyển từ mét sang feet.</h2>
+  <label for="length">Mời nhập chiều dài: </label>
+  <input type="text" name="length" id="length" placeholder="2">
+  <select id="unit2">
+      <option>m</option>
+      <option>ft</option>
+  </select>
+  <button type="button" onclick="convert2()">Chuyển đổi</button>
+  <p id="result2"></p>
+<!--  Kết thúc bài 2-->
+
+  <h2>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</h2>
+  <label for="lengthA">Mời nhập chiều dài cạnh a (m): </label>
+  <input type="text" name="lengthA" id="lengthA" placeholder="2">
+  <button type="button" onclick="convert3()">Chuyển đổi</button>
+  <p id="result3"></p>
+<!--  Kết thúc bài 3-->
+
+  <h2>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</h2>
+  <label for="daiA">Mời nhập chiều dài cạnh a (m): </label>
+  <input type="text" name="lengthA" id="daiA" placeholder="2" style="margin-left: 11px"><br>
+  <label for="rongB">Mời nhập chiều rộng cạnh b (m): </label>
+  <input type="text" name="lengthB" id="rongB" placeholder="2">
+  <button type="button" onclick="convert4()">Chuyển đổi</button>
+  <p id="result4"></p>
 <script>
-  function convert() {
-    
+  function convert1() {
+    let temp=document.getElementById('temp').value;
+    let unit=document.getElementById('unit').value;
+    if (unit == "℃") {
+        result = 9*temp/5 +32;
+        document.querySelector('#result1').innerHTML=`Kết quả là ${result}°F`;
+    } else {
+        result = 5/9 * (temp-32);
+        document.querySelector('#result1').innerHTML=`Kết quả là ${result}℃`;
+    }
+  }
+
+  function convert2() {
+      let length=document.getElementById('length').value;
+      let unit=document.getElementById('unit2').value;
+      // if (unit == 'm') {
+      //     result = length*3.2808;
+      //     document.querySelector('#result2').innerHTML=`Kết quả là ${result} feet`
+      // } else {
+      //     result = length/3.2808;
+      //     document.querySelector('#result2').innerHTML=`Kết quả là ${result} mét`
+      // }
+      switch (unit) {
+          case('m'):result = length*3.2808;
+          document.querySelector('#result2').innerHTML=`Kết quả là ${result} feet`;
+          break;
+          case('ft'):result = length/3.2808;
+          document.querySelector('#result2').innerHTML=`Kết quả là ${result} mét`;
+          break;
+      }
+  }
+
+  function convert3() {
+      let lengthA=document.getElementById('lengthA').value;
+      Result= lengthA*lengthA;
+      document.querySelector('#result3').innerHTML=`Diện tích hình vuông là ${Result} m<sup>2</sup>`
+  }
+
+  function convert4() {
+      let a=document.getElementById('daiA').value;
+      let b=document.getElementById('rongB').value;
+      result=a*b;
+      document.querySelector('#result4').innerHTML=`Diện tích hình chữ nhật là ${result} m<sup>2</sup>`
   }
 </script>
 </body>

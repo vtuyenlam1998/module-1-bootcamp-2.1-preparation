@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #myDIV {
+        left: 60px;
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        position: relative;
+        border: 1px solid black
+    }
+</style>
+
+<body>
+<h1>The Element Object</h1>
+<h2>The offsetLeft Property</h2>
+
+<div id="myDIV">
+    <p>The offsetLeft of "myDIV" is:</p>
+    <p id="demo"></p>
+</div>
+
+<script>
+    const element = document.getElementById("myDIV");
+    document.getElementById("demo").innerHTML = element.offsetLeft;
+    console.log(document.querySelector("body").style.margin)
+</script>
+
+</body>
+</html>

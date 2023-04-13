@@ -9,15 +9,29 @@
   <script>
     let numbers=Number(prompt("Nhập số: "));
     let isDivided7=0;
-    let sum=0
-    const max_int_number=Number.MAX_SAFE_INTEGER;
-        for (let i=0;isDivided7<numbers;i++) {
-          if (i % 7 == 0) {
+    let sum=0;
+    let i=0;
+    // const max_int_number=Number.MAX_SAFE_INTEGER;
+    //     for (let i=0;i<max_int_number;i++) {
+    //         if (isDivided7<numbers) {
+    //             if(isNaN(numbers)) {
+    //                 numbers = Number(prompt("Nhập số đê: "));
+    //             }
+    //             else if (i % 7 === 0) {
+    //                     isDivided7++;
+    //                     sum =sum + i;
+    //                 }
+    //             } else {break;}
+    //         // } else
+    //     } document.write(sum);
+    while ( isDivided7 < numbers ) {
+        if (i % 7 == 0) {
+            document.write(`${i} <br>`);
+            sum += i;
             isDivided7++;
-            sum =sum + i;
-            document.write(sum + "<br>")
-          }
         }
+        i++;
+    } document.write(`Tổng của ${numbers} số chia hết cho 7 là ${sum}`);
   </script>
 </body>
 </html>

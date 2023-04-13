@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp date</title>
+</head>
+<body>
+<script>
+    let MyDate = function (day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getDay = function () {
+            return this.day;
+        }
+        this.getMonth = function () {
+            return this.month;
+        }
+        this.getYear = function () {
+            return this.year;
+        }
+        this.setDay = function (day) {
+            this.day = day;
+        }
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+        this.setYear = function (year) {
+            this.year = year;
+        }
+        this.setDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            return this;
+        }
+        this.toString2 = function () {
+            if ((this.day < 10) ||
+                (this.month < 10)) {
+                if ((this.day < 10) &&
+                    (this.month < 10)) {
+                    return `0${this.day}/0${this.month}/${this.year}`
+                } else if (this.day < 10) {
+                    return `0${this.day}/${this.month}/${this.year}`
+                } else if (this.month < 10) {
+                    return `${this.day}/0${this.month}/${this.year}`
+                }
+            } else {
+                return `${this.day}/${this.month}/${this.year}`
+            }
+        }
+    }
+        let date = new MyDate(10, 12, 1998);
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        alert(date.toString2());
+        date.setYear(2023);
+        date.setMonth(2);
+        date.setDay(9);
+        alert(date.toString2());
+        date.setDate(23, 8, 1999);
+        // let day = date.getDay();
+        // let month = date.getMonth();
+        // let year = date.getYear();
+        alert(date.toString2());
+
+</script>
+</body>
+</html>

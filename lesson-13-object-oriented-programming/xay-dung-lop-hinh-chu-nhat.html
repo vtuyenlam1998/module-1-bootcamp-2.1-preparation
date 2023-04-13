@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3"></canvas>"
+  <script>
+      let Rectangle =function (width, height) {
+              this.width = width;
+              this.height = height;
+              this.getArea = function () {
+                  return this.width * this.height;
+              }
+              this.getPerimeter = function () {
+                  return (this.width + this.height) * 2;
+              }
+              this.getWidth = function () {
+                  return this.width;
+              }
+              this.getHeight = function () {
+                  return this.height;
+              }
+              this.setWidth = function (width) {
+                  this.width = width;
+              }
+              this.setHeight = function (height) {
+                  this.height = height;
+              }
+          }
+      let myRectangle = new Rectangle(150, 50);
+      myRectangle.setWidth(200);
+      document.write(myRectangle.getWidth());
+    function createRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.fillStyle = '#fa4b2a';
+        ctx.fillRect(10, 10, myRectangle.getWidth(), myRectangle.getHeight());
+    }
+    createRectangle();
+  </script>
+</body>
+</html>

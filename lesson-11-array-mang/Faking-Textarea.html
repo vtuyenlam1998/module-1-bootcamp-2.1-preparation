@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+<body>
+  <center>
+    <h2>Viết một câu chửi tôi nè :P</h2>
+    <textarea name="txt" cols="40" rows="10"></textarea>
+  </center>
+  <script>
+    const TROLL_STRING= "Anh Lâm đẹp trai,dễ thương mà còn giỏi giang hihi yêu tóa!!!"
+    let trollArray=[];
+    for (let i = 0;i<TROLL_STRING.length;i++) {
+      trollArray.push(TROLL_STRING.slice(i, i+1));
+    }
+    function trollGame() {
+      let result='';
+      let inputText=document.querySelector("textarea");
+      let lengthInput = inputText.value.length;
+      if (lengthInput>0) {
+        for (let i=0;i<lengthInput;i++) {
+          result += trollArray[i];
+          if (i == trollArray.length-1) {
+            inputText.value='';
+            result='';
+          }
+        }
+      }
+      inputText.value=result;
+      result = '';
+      setTimeout('trollGame()',1)
+    }
+    document.querySelector('textarea').addEventListener('keydown',trollGame)
+  </script>
+</body>
+</html>

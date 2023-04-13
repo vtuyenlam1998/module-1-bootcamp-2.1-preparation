@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự tương tác giữa hai đối tượng bóng đèn và công tắc</title>
+</head>
+<body>
+  <script>
+    let SwitchButton=function (status,lamp) {
+        this.status=status;
+        this.lamp=lamp;
+        this.getLamp=function () {
+          this.lamp;
+        }
+        this.getStatus() {
+          this.status;
+      }
+        this.setLamp=function (lamp) {
+          this.lamp=lamp;
+        }
+        this.connectToLamp=function () {
+          return this.lamp=ElectricLamp;
+        };
+        this.switchOn=function () {
+          this.lamp.status=true;
+        };
+        this.switchOff=function () {
+          this.lamp.status=false;
+        };
+    }
+
+    let ElectricLamp=function (status) {
+        this.status=status;
+        this.getStatus=function (){
+          return this.status;
+        }
+    }
+  </script>
+</body>
+</html>

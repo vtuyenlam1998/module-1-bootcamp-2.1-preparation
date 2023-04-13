@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp mô phỏng hoạt động của đèn pin</title>
+</head>
+<body>
+    <div>
+
+    </div>
+  <script>
+    let Battery=function () {
+      this.setEnergy=function (energy) {
+        this.energy=energy;
+      };
+      this.getEnergy=function () {
+        return this.energy;
+      }
+      this.decreaseEnergy=function () {
+        if(this.energy > 0) {
+          this.energy--;
+        }
+      }
+    };
+    let Flashlamp=function () {
+      this.setBattery=function (battery) {
+        this.battery=battery;
+      };
+      this.getBatteryInfo=function () {
+        return this.battery.getEnergy();
+      };
+      this.light=function () {
+        if(this.status) {
+          alert("Lightning") ;
+        } else {
+          alert("Not lightning");
+        }
+      };
+      this.turnOn=function () {
+        this.status=true;
+      };
+      this.turnOff=function () {
+        this.status=false;
+      }
+    };
+    let battery=new Battery();
+    battery.setEnergy(10);
+
+    let flashlamp=new Flashlamp();
+    flashlamp.setBattery(battery);
+
+    document.write("Battery info:"+flashlamp.getBatteryInfo()+"</br>");
+    flashlamp.light();
+
+    document.write("Turn on</br>")
+    flashlamp.turnOn();
+    flashlamp.light();
+    document.write("Battery info:"+flashlamp.getBatteryInfo()+"</br>");
+
+    document.write("Turn off </br>");
+    flashlamp.turnOff();
+    flashlamp.light();
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+  <script>
+    function isPrime(number) {
+        let commonDivisorNum = 0;
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                commonDivisorNum++;
+            }
+        } if (commonDivisorNum === 2) {
+            alert(`${number} là số nguyên tố`)
+        } else alert(`${number} không là số nguyên tố`);
+        return number;
+    }
+        let number = prompt("Mời nhập 1 số bất kì: ");
+        isPrime(number);
+  </script>
+</body>
+</html>

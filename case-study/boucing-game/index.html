@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bouncing game</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            background: pink;
+            display: block;
+            margin: 0 auto;
+            border: 5px solid deeppink;
+        }
+        body {
+            position: relative;
+            background-image: url("img/105347182_p0.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        #img-btn {
+            position: absolute;
+            left: 51%;
+            top:45%;
+            transform: translate(-50%,-50%);
+            width: 250px;
+            height: 200px;
+        }
+        #img-btn:active {
+            opacity: 0.9;
+        }
+        /*#startBtn {*/
+        /*    position: absolute;*/
+        /*    left: 50%;*/
+        /*    top: 35%;*/
+        /*    transform: translate(-50%,-50%);*/
+        /*    width: 200px;*/
+        /*    height: 80px;*/
+        /*    font-size: 40px;*/
+        /*    text-align: center;*/
+        /*    !*font-family: Algerian;*!*/
+        /*    background-image: url('img/start-button.png');*/
+        /*}*/
+        #txt {
+            position: absolute;
+            left: 10%;
+            top: 10%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+            font-family: "Times New Roman";
+            color: deeppink;
+            border: 5px;
+        }
+    </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="480" height="320" ></canvas>
+  <p id="demo"></p>
+<!--  <button id="startBtn" type="button" onclick="startGame()" >Start</button>-->
+  <img alt="startButton" id="img-btn" src="./img/start-button.png" onclick="startGame()">
+<!--  <button type="button" id="pauseBtn" onclick="pause()">Pause</button>-->
+<!--  <button type="button" id="pauseBtn" onclick="unpause()">Pause</button>-->
+  <div id="txt"></div>
+  <script src="./js/bouncing-game.js"></script>
+  <script src="./js/firebase.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp mô tả điện thoại</title>
+    <style>
+        .myDiv {
+            border: 5px outset red;
+            background-color: gray;
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="myDiv">
+        <h3>Iphone</h3>
+        <p id="battery1"></p>
+        <button type="button" onclick="sendMessageIphone()">Sent<sup></sup></button>
+        <button type="button" onclick="getMessageIphone()">Inbox<sup id="numberGetIphone"></sup></button>
+        <button type="button" onclick="draftMessageIphone()">Draft<sup id="numberDraftIphone"></sup></button>
+
+    </div><br>
+    <div class="myDiv">
+        <h3>Nokia</h3>
+        <p id="battery2"></p>
+        <button type="button" onclick="sendMessageNokia()">Sent<sup></sup></button>
+        <button type="button" onclick="getMessageNokia()">Inbox<sup id="numberGetNokia"></sup></button>
+        <button type="button" onclick="draftMessageNokia()">Draft<sup id="numberDraftNokia"></sup></button>
+    </div>
+  <script>
+    // let Battery=function () {
+    //     this.setEnergy=function (energy) {
+    //         this.energy=energy;
+    //     }
+    //     this.getEnergy=function () {
+    //         return this.energy;
+    //     }
+    //     this.decreaseEnergy=function () {
+    //         if(this.energy>0) {
+    //             this.energy--;
+    //         }
+    //     }
+    // }
+    let Mobile=function (battery,composeMemory,inboxMemory,sentMemory,status) {
+        this.battery=battery;
+        this.composeMemory=composeMemory;
+        this.inboxMemory=inboxMemory;
+        this.sentMemory=sentMemory;
+        this.status=status;
+        this.isOn=function () {
+            return this.status;
+        }
+        this.turnOn=function () {
+            if (!this.isOn()) {
+                if(this.battery>0 && this.battery<=100) {
+                    this.useMobileFunc();
+                    this.status=true;
+                }
+            }
+        }
+        this.turnOff=function () {
+            if (this.isOn()) {
+                if(this.battery>0 && this.battery<=100) {
+                    this.useMobileFunc();
+                    this.status=false;
+                }
+            }
+        }
+        this.chargeBattery=function () {
+            if (this.battery<100) {
+                this.battery +=5;
+            }
+        }
+        this.composeMessage=function (message) {
+            if( this.isOn()) {
+                if (this.battery>0) {
+                    this.useMobileFunc();
+                    this.composeMemory=message;
+                }
+            }
+        }
+        this.sendMessage=function (toMobile) {
+            if (this.isOn()) {
+                if(this.battery>0) {
+                    this.useMobileFunc();
+                    this.sentMemory=this.composeMemory;
+                    toMobile.inboxMemory=this.sentMemory;
+                }
+            }
+        }
+        this.readMessage=function () {
+            if(this.isOn()) {
+                if(this.battery>0) {
+                    this.useMobileFunc();
+                    return this.inboxMemory;
+                }
+            }
+        }
+        this.useMobileFunc=function () {
+            this.battery--;
+        }
+        // this.setMessage=function (message) {
+        //     this.message=message;
+        // }
+        // this.getMessage=function () {
+        //     return this.message;
+        // }
+        // this.sendMessage=function (message,mobile) {
+        //     mobile.setMessage(message)
+        // }
+    }
+    let batteryIphone=new Battery();
+    let batteryNokia= new Battery();
+    batteryIphone.setEnergy(100);
+    batteryNokia.setEnergy(100);
+    let pin1=batteryIphone.getEnergy();
+    let pin2=batteryNokia.getEnergy();
+    document.getElementById("battery1").innerHTML=`${pin1}%`
+    document.getElementById("battery2").innerHTML=`${pin2}%`
+    let nokia=new Mobile(1,'Nokia');
+    let iphone=new Mobile(2,'Iphone');
+    let arrayNokia= new Array();
+    let arrayIphone= new Array();
+    function sendMessageIphone() {
+        iphone.sendMessage(prompt("Gửi tin nhắn tới Nokia: ", ''), nokia);
+        arrayNokia.push(nokia.getMessage());
+        document.getElementById("numberGetNokia").innerHTML=arrayNokia.length;
+    }
+    function getMessageIphone() {
+
+    }
+    function draftMessageIphone() {
+
+    }
+    function sendMessageNokia() {
+
+    }
+    function getMessageNokia() {
+        let messageNokia = nokia.getMessage();
+        alert(messageNokia);
+    }
+    function draftMessageNokia() {
+
+    }
+  </script>
+</body>
+</html>

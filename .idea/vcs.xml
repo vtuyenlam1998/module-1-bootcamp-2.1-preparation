@@ -2,10 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lesson-04-git-html" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lesson-04-git-html/GitProject" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lesson-06-Javascripts" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lesson-07-bien-du-lieu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/case-study/Flappy Bird/Flappy-bird" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/case-study/Ping-Pong-Game-JavaScript" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lesson-14-object-oriented-programming-2/objects" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/my-new-project" vcs="Git" />
   </component>
 </project>

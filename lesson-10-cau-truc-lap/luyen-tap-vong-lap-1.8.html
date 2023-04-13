@@ -5,6 +5,31 @@
     <title>luyện tập vòng lặp</title>
 </head>
 <body>
-  <script></script>
+    <button type="button" name="guessNumber" id="guessNumber">Đoán số</button>
+  <script>
+      document.getElementById("guessNumber").addEventListener('click',guessNumber);
+      function guessNumber() {
+          const number = Number(prompt("Mời nhập 1 số: ", ''));
+          const randomChoose = Math.floor(Math.random() * number);
+          let guessNumber = Number(prompt("Mời đoán số: ", ''));
+          let guessChance = 3;
+          while ((guessNumber !== randomChoose) || (guessNumber === randomChoose)) {
+              if (guessChance) {
+                  if (guessNumber > randomChoose) {
+                      guessNumber = Number(prompt("Số cần đoán nhỏ hơn: ", ''));
+                  } else if (guessNumber < randomChoose) {
+                      guessNumber = Number(prompt("Số cần đoán lớn hơn: ", ''));
+                  } else {
+                      alert("Cúng hỉ phạt thòi");
+                      break;
+                  }
+              } else {
+                  alert("Chán bạn ghê");
+                  break;
+              }
+              guessChance--;
+          }
+      }
+  </script>
 </body>
 </html>

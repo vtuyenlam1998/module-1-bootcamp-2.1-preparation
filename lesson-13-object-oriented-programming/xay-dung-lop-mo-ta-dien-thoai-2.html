@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .myDiv {
+      border: 5px outset red;
+      background-color: gray;
+      text-align: center;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="myDiv">
+    <h3>Iphone<span style="float: right" id="onOffIphone"></span></h3>
+    <p id="battery1"></p>
+    <button type="button" onclick="sendMessageIphone()">Sent<sup id="numberSendIphone"></sup></button>
+    <button type="button" onclick="getMessageIphone()">Inbox<sup id="numberGetIphone"></sup></button>
+    <button type="button" onclick="composeMessageIphone()">Compose<sup id="numberComposeIphone"></sup></button>
+    <hr>
+    <button type="button" onclick="chargeBatteryIphone()">Sạc pin</button>
+    <button type="button" onclick="turnOffIphone()">Tắt nguồn</button>
+    <button type="button" onclick="turnOnIphone()">Mở nguồn</button>
+  </div><br>
+  <div class="myDiv">
+    <h3>Nokia<span id="onOffNokia" style="float: right"></span></h3>
+    <p id="battery2"></p>
+    <button type="button" onclick="sendMessageNokia()">Sent<sup id="numberSendNokia"></sup></button>
+    <button type="button" onclick="getMessageNokia()">Inbox<sup id="numberGetNokia"></sup></button>
+    <button type="button" onclick="composeMessageNokia()">Compose<sup id="numberDraftNokia"></sup></button>
+    <hr>
+    <button type="button" onclick="chargeBatteryNokia()">Sạc pin</button>
+    <button type="button" onclick="turnOffNokia()">Tắt nguồn</button>
+    <button type="button" onclick="turnOnNokia()">Mở nguồn</button>
+  </div>
+  <script src="./js/xay-dung-dien-thoai-2.js"></script>
+</body>
+</html>

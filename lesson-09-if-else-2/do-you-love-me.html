@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bạn phải yêu tôi!!!</title>
+</head>
+<body>
+  <h1 style="position: absolute; left:220px; top:175px;">Em làm người yêu tôi nhé!?</h1>
+  <button type="button" onclick="yesClick()" style="position: absolute;left:255px; top:235px">Cưới luôn đi anh <3</button>
+  <button type="button" onmouseover="noHover()" id="btnNo" style="position:absolute; left:390px; top:235px;">Mình làm bạn thôi anh :<</button>
+  <script type="text/javascript">
+    function yesClick() {
+      alert("Em hứa rồi nhe,mai mình đi hẹn hò!~");
+    }
+    
+    function noHover() {
+      let x=Math.round(Math.random() * window.innerWidth);
+      let y=Math.round(Math.random() * window.innerHeight);
+      document.getElementById("btnNo").style.left = x +'px';
+      document.getElementById("btnNo").style.top = y +'px';
+    }
+  </script>
+</body>
+</html>
